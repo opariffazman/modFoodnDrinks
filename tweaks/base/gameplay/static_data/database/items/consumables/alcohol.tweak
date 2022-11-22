@@ -6,50 +6,50 @@ Alcohol : ConsumableItem
 {
 	entityName = "base_alcohol_item";
 	appearanceName = "base_alcohol_item_generic_alcohol";
-	tags += 
+	tags +=
 	[
 		"Edible"
 	];
 	itemType = "ItemType.Con_Edible";
 	consumableBaseName = "ConsumableBaseName.Alcohol";
-	objectActions = 
+	objectActions =
 	[
 		{
-			completionEffects = 
+			completionEffects =
 			[
 				{
 					statusEffect = "BaseStatusEffect.Drunk";
-				}, 
+				},
 				{
 					statusEffect = "BaseStatusEffect.AlcoholDebuff";
 				}
 			];
 		} : Consume
 	];
-	OnEquip = 
+	OnEquip =
 	[
 		{
-			UIData = 
+			UIData =
 			{
 				localizedDescription = "LocKey#34248";
 			};
-		}, 
+		},
 		{
-			UIData = 
+			UIData =
 			{
 				localizedDescription = "LocKey#34249";
 			};
 		}
 	];
-	statModifierGroups = 
+	statModifierGroups =
 	[
 		"Items.AlcoholConsumableDuration"
 	];
-	buyPrice = 
+	buyPrice =
 	[
 		"Price.Alcohol", "Price.BuyPriceIntrinsicModMult"
 	];
-	sellPrice = 
+	sellPrice =
 	[
 		"Price.Alcohol", "Price.SellMultiplier", "Price.CraftingTraitMultiplier", "Price.SellPriceIntrinsicModMult"
 	];
@@ -59,11 +59,11 @@ Alcohol : ConsumableItem
 LowQualityAlcohol : Alcohol
 {
 	fk< Quality > quality = "Quality.Common";
-	buyPrice += 
+	buyPrice +=
 	[
 		"Price.LowQualityAlcohol"
 	];
-	sellPrice += 
+	sellPrice +=
 	[
 		"Price.LowQualityAlcohol"
 	];
@@ -72,12 +72,12 @@ LowQualityAlcohol : Alcohol
 [ notQueryable ]
 MediumQualityAlcohol : Alcohol
 {
-	fk< Quality > quality = "Quality.Common";
-	buyPrice += 
+	fk< Quality > quality = "Quality.Uncommon";
+	buyPrice +=
 	[
 		"Price.MediumQualityAlcohol"
 	];
-	sellPrice += 
+	sellPrice +=
 	[
 		"Price.MediumQualityAlcohol"
 	];
@@ -86,12 +86,12 @@ MediumQualityAlcohol : Alcohol
 [ notQueryable ]
 GoodQualityAlcohol : Alcohol
 {
-	fk< Quality > quality = "Quality.Common";
-	buyPrice += 
+	fk< Quality > quality = "Quality.Rare";
+	buyPrice +=
 	[
 		"Price.GoodQualityAlcohol"
 	];
-	sellPrice += 
+	sellPrice +=
 	[
 		"Price.GoodQualityAlcohol"
 	];
@@ -100,12 +100,12 @@ GoodQualityAlcohol : Alcohol
 [ notQueryable ]
 TopQualityAlcohol : Alcohol
 {
-	fk< Quality > quality = "Quality.Common";
-	buyPrice += 
+	fk< Quality > quality = "Quality.Epic";
+	buyPrice +=
 	[
 		"Price.TopQualityAlcohol"
 	];
-	sellPrice += 
+	sellPrice +=
 	[
 		"Price.TopQualityAlcohol"
 	];
@@ -116,7 +116,7 @@ LowQualityAlcohol1 : LowQualityAlcohol
 	displayName = "LocKey#2695";
 	localizedDescription = "LocKey#4785";
 	appearanceName = "LowQualityAlcohol1_abydos_classic_censored";
-	tags += 
+	tags +=
 	[
 		"HasModel"
 	];
@@ -128,7 +128,7 @@ LowQualityAlcohol2 : LowQualityAlcohol
 	displayName = "LocKey#2696";
 	localizedDescription = "LocKey#4786";
 	appearanceName = "LowQualityAlcohol2_abydos_king_size_censored";
-	tags += 
+	tags +=
 	[
 		"HasModel"
 	];
@@ -140,7 +140,7 @@ LowQualityAlcohol3 : LowQualityAlcohol
 	displayName = "LocKey#2697";
 	localizedDescription = "LocKey#4787";
 	appearanceName = "LowQualityAlcohol3_broseph_ale";
-	tags += 
+	tags +=
 	[
 		"HasModel"
 	];
@@ -152,7 +152,7 @@ LowQualityAlcohol4 : LowQualityAlcohol
 	displayName = "LocKey#2698";
 	localizedDescription = "LocKey#4788";
 	appearanceName = "LowQualityAlcohol4_broseph_lager";
-	tags += 
+	tags +=
 	[
 		"HasModel"
 	];
@@ -171,7 +171,7 @@ LowQualityAlcohol6 : LowQualityAlcohol
 	displayName = "LocKey#2700";
 	localizedDescription = "LocKey#4790";
 	appearanceName = "LowQualityAlcohol6_bumelant";
-	tags += 
+	tags +=
 	[
 		"HasModel"
 	];
@@ -211,7 +211,7 @@ MediumQualityAlcohol2 : MediumQualityAlcohol
 	displayName = "LocKey#2702";
 	localizedDescription = "LocKey#4792";
 	appearanceName = "MediumQualityAlcohol2_oduggan";
-	tags += 
+	tags +=
 	[
 		"HasModel"
 	];
@@ -223,7 +223,7 @@ MediumQualityAlcohol3 : MediumQualityAlcohol
 	displayName = "LocKey#2703";
 	localizedDescription = "LocKey#4793";
 	appearanceName = "MediumQualityAlcohol3_bolshevik";
-	tags += 
+	tags +=
 	[
 		"HasModel"
 	];
@@ -242,7 +242,7 @@ MediumQualityAlcohol5 : MediumQualityAlcohol
 	displayName = "LocKey#2705";
 	localizedDescription = "LocKey#4795";
 	appearanceName = "MediumQualityAlcohol5_joe_tiel";
-	tags += 
+	tags +=
 	[
 		"HasModel"
 	];
@@ -268,7 +268,7 @@ GoodQualityAlcohol1 : GoodQualityAlcohol
 	displayName = "LocKey#2707";
 	localizedDescription = "LocKey#4797";
 	appearanceName = "GoodQualityAlcohol1_donaghys";
-	tags += 
+	tags +=
 	[
 		"HasModel"
 	];
@@ -280,7 +280,7 @@ GoodQualityAlcohol2 : GoodQualityAlcohol
 	displayName = "LocKey#2708";
 	localizedDescription = "LocKey#4798";
 	appearanceName = "GoodQualityAlcohol2_centzon_totochtin";
-	tags += 
+	tags +=
 	[
 		"HasModel"
 	];
@@ -306,7 +306,7 @@ GoodQualityAlcohol5 : GoodQualityAlcohol
 	displayName = "LocKey#2711";
 	localizedDescription = "LocKey#4801";
 	appearanceName = "GoodQualityAlcohol5_champaradise";
-	tags += 
+	tags +=
 	[
 		"HasModel"
 	];
@@ -318,7 +318,7 @@ GoodQualityAlcohol6 : GoodQualityAlcohol
 	displayName = "LocKey#2712";
 	localizedDescription = "LocKey#4802";
 	appearanceName = "GoodQualityAlcohol6_chateau_piquette";
-	tags += 
+	tags +=
 	[
 		"HasModel"
 	];
@@ -330,7 +330,7 @@ TopQualityAlcohol1 : TopQualityAlcohol
 	displayName = "LocKey#2713";
 	localizedDescription = "LocKey#4803";
 	appearanceName = "TopQualityAlcohol1_calavera_feliz";
-	tags += 
+	tags +=
 	[
 		"HasModel"
 	];

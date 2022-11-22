@@ -831,17 +831,17 @@ Food : PriceAdditive
 
 LowQualityFood : PriceMultiplier
 {
-	value = 1.0f;
+	value = 2.0f;
 }
 
 MediumQualityFood : PriceMultiplier
 {
-	value = 2.4f;
+	value = 4.8f;
 }
 
 GoodQualityFood : PriceMultiplier
 {
-	value = 5.0f;
+	value = 10.0f;
 }
 
 Drink : PriceAdditive
@@ -851,17 +851,17 @@ Drink : PriceAdditive
 
 LowQualityDrink : PriceMultiplier
 {
-	value = 1.0f;
+	value = 2.0f;
 }
 
 MediumQualityDrink : PriceMultiplier
 {
-	value = 2.0f;
+	value = 4.0f;
 }
 
 GoodQualityDrink : PriceMultiplier
 {
-	value = 4.0f;
+	value = 8.0f;
 }
 
 Alcohol : PriceAdditive

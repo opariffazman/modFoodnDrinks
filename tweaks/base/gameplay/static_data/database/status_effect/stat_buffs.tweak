@@ -7,15 +7,15 @@ Stat_Buff : StatusEffect
 	bool replicated = true;
 	string displayName = "Stats Increased";
 	string iconPath = "increased_stats_icon";
-	fk< StatusEffectFX >[] VFX = 
+	fk< StatusEffectFX >[] VFX =
 	[
 		{
 			name = "status_increased_stats";
 		}
 	];
-	fk< StatModifierGroup > duration = 
+	fk< StatModifierGroup > duration =
 	{
-		statModifiers = 
+		statModifiers =
 		[
 			{
 				statType = "BaseStats.MaxDuration";
@@ -31,21 +31,21 @@ TimedImmunity : StatusEffect
 {
 	statusEffectType = "BaseStatusEffectTypes.PassiveBuff";
 	bool replicated = true;
-	CName[] gameplayTags = 
+	CName[] gameplayTags =
 	[
 		"Buff", "Immunity"
 	];
-	fk< StatusEffectFX >[] VFX = 
+	fk< StatusEffectFX >[] VFX =
 	[
 		{
 			name = "status_increased_stats";
 		}
 	];
-	fk< GameplayLogicPackage >[] packages = 
+	fk< GameplayLogicPackage >[] packages =
 	[
 		"GLP.MaxResistances"
 	];
-	fk< StatusEffectUIData > uiData = 
+	fk< StatusEffectUIData > uiData =
 	{
 		string displayName = "Limited time immunity";
 		string iconPath = "increased_stats_icon";
@@ -55,9 +55,9 @@ TimedImmunity : StatusEffect
 
 KerenzikovBuff : Stat_Buff
 {
-	fk< StatModifierGroup > duration = 
+	fk< StatModifierGroup > duration =
 	{
-		statModifiers = 
+		statModifiers =
 		[
 			{
 				statType = "BaseStats.MaxDuration";
@@ -66,10 +66,10 @@ KerenzikovBuff : Stat_Buff
 			} : ConstantStatModifier
 		];
 	};
-	fk< GameplayLogicPackage >[] packages = 
+	fk< GameplayLogicPackage >[] packages =
 	[
 		{
-			stats = 
+			stats =
 			[
 				{
 					statType = "BaseStats.HasKerenzikov";
@@ -83,17 +83,17 @@ KerenzikovBuff : Stat_Buff
 
 PainInhibitors : StatusEffect
 {
-	CName[] gameplayTags += 
+	CName[] gameplayTags +=
 	[
 		"Regenerate"
 	];
-	fk< GameplayLogicPackage >[] packages = 
+	fk< GameplayLogicPackage >[] packages =
 	[
 		{
 			fk< StatModifierGroup > duration = "BaseStats.InfiniteDuration";
-		} : GameplayLogicPackage, 
+		} : GameplayLogicPackage,
 		"GLP.NoHitReactions", {
-			effectors = 
+			effectors =
 			[
 				"Sasquatch.RegenerateEffector"
 			];
@@ -103,10 +103,10 @@ PainInhibitors : StatusEffect
 
 HumanShield : StatusEffect
 {
-	fk< GameplayLogicPackage >[] packages = 
+	fk< GameplayLogicPackage >[] packages =
 	[
 		{
-			stats = 
+			stats =
 			[
 				{
 					statType = "BaseStats.TBHsBaseCoefficient";
@@ -121,20 +121,20 @@ HumanShield : StatusEffect
 SuppressVisibility : StatusEffect
 {
 	statusEffectType = "BaseStatusEffectTypes.PassiveBuff";
-	CName[] gameplayTags = 
+	CName[] gameplayTags =
 	[
 		"Buff", "Visibility"
 	];
-	fk< GameplayLogicPackage >[] packages = 
+	fk< GameplayLogicPackage >[] packages =
 	[
 		{
-			stats = 
+			stats =
 			[
 				{
 					statType = "BaseStats.Visibility";
 					modifierType = "Additive";
 					value = -0.8f;
-				} : ConstantStatModifier, 
+				} : ConstantStatModifier,
 				{
 					statType = "BaseStats.VisualStimRangeMultiplier";
 					modifierType = "Multiplier";
@@ -148,14 +148,14 @@ SuppressVisibility : StatusEffect
 SuppressNoise : StatusEffect
 {
 	statusEffectType = "BaseStatusEffectTypes.PassiveBuff";
-	CName[] gameplayTags = 
+	CName[] gameplayTags =
 	[
 		"Buff", "Audio"
 	];
-	fk< GameplayLogicPackage >[] packages = 
+	fk< GameplayLogicPackage >[] packages =
 	[
 		{
-			stats = 
+			stats =
 			[
 				{
 					statType = "BaseStats.AudioStimRangeMultiplier";
@@ -170,14 +170,14 @@ SuppressNoise : StatusEffect
 GreaterSuppressNoise : StatusEffect
 {
 	statusEffectType = "BaseStatusEffectTypes.PassiveBuff";
-	CName[] gameplayTags = 
+	CName[] gameplayTags =
 	[
 		"Buff", "Audio"
 	];
-	fk< GameplayLogicPackage >[] packages = 
+	fk< GameplayLogicPackage >[] packages =
 	[
 		{
-			stats = 
+			stats =
 			[
 				{
 					statType = "BaseStats.AudioStimRangeMultiplier";
@@ -191,20 +191,20 @@ GreaterSuppressNoise : StatusEffect
 
 SupressPresence : SuppressVisibility
 {
-	CName[] gameplayTags = 
+	CName[] gameplayTags =
 	[
 		"Buff", "Visibility", "Audio"
 	];
-	fk< GameplayLogicPackage >[] packages = 
+	fk< GameplayLogicPackage >[] packages =
 	[
 		{
-			stats = 
+			stats =
 			[
 				{
 					statType = "BaseStats.VisualStimRangeMultiplier";
 					modifierType = "Multiplier";
 					value = 0.5f;
-				} : ConstantStatModifier, 
+				} : ConstantStatModifier,
 				{
 					statType = "BaseStats.AudioStimRangeMultiplier";
 					modifierType = "Multiplier";
@@ -218,20 +218,20 @@ SupressPresence : SuppressVisibility
 PersonalSoundSilencerPlayerBuff : StatusEffect
 {
 	statusEffectType = "BaseStatusEffectTypes.PassiveBuff";
-	CName[] gameplayTags = 
+	CName[] gameplayTags =
 	[
 		"Buff", "Audio", "Visibility"
 	];
-	fk< GameplayLogicPackage >[] packages = 
+	fk< GameplayLogicPackage >[] packages =
 	[
 		{
-			stats = 
+			stats =
 			[
 				{
 					statType = "BaseStats.VisualStimRangeMultiplier";
 					modifierType = "Multiplier";
 					value = 0.0f;
-				} : ConstantStatModifier, 
+				} : ConstantStatModifier,
 				{
 					statType = "BaseStats.AudioStimRangeMultiplier";
 					modifierType = "Multiplier";
@@ -250,7 +250,7 @@ ConsumableBuff : BuffStatusEffect
 
 InhalerBuff : ConsumableBuff
 {
-	fk< StatusEffectFX >[] VFX = 
+	fk< StatusEffectFX >[] VFX =
 	[
 		{
 			name = "splinter_buff";
@@ -260,7 +260,7 @@ InhalerBuff : ConsumableBuff
 
 InjectorBuff : ConsumableBuff
 {
-	fk< StatusEffectFX >[] VFX = 
+	fk< StatusEffectFX >[] VFX =
 	[
 		{
 			name = "reflex_buster";
@@ -271,20 +271,20 @@ InjectorBuff : ConsumableBuff
 FirstAidWhiffV0 : InhalerBuff
 {
 	fk< StatModifierGroup > duration = "Items.FirstAidWhiffDuration";
-	fk< GameplayLogicPackage >[] packages = 
+	fk< GameplayLogicPackage >[] packages =
 	[
 		{
-			fk< Effector >[] effectors = 
+			fk< Effector >[] effectors =
 			[
 				{
-					prereqRecord = 
+					prereqRecord =
 					{
 						statType = "Health";
 						valueToCheck = 0;
 						comparisonType = "Greater";
 					} : StatPrereq;
 					effectorClassName = "ModifyStatPoolValueEffector";
-					statPoolUpdates = 
+					statPoolUpdates =
 					[
 						{
 							statPoolType = "BaseStatPools.Health";
@@ -296,7 +296,7 @@ FirstAidWhiffV0 : InhalerBuff
 			];
 		} : GameplayLogicPackage
 	];
-	uiData = 
+	uiData =
 	{
 		string displayName = "LocKey#2679";
 		string iconPath = "first_aid_whiff";
@@ -306,20 +306,20 @@ FirstAidWhiffV0 : InhalerBuff
 
 FirstAidWhiffV1 : FirstAidWhiffV0
 {
-	fk< GameplayLogicPackage >[] packages = 
+	fk< GameplayLogicPackage >[] packages =
 	[
 		{
-			fk< Effector >[] effectors = 
+			fk< Effector >[] effectors =
 			[
 				{
-					prereqRecord = 
+					prereqRecord =
 					{
 						statType = "Health";
 						valueToCheck = 0;
 						comparisonType = "Greater";
 					} : StatPrereq;
 					effectorClassName = "ModifyStatPoolValueEffector";
-					statPoolUpdates = 
+					statPoolUpdates =
 					[
 						{
 							statPoolType = "BaseStatPools.Health";
@@ -335,20 +335,20 @@ FirstAidWhiffV1 : FirstAidWhiffV0
 
 FirstAidWhiffV2 : FirstAidWhiffV0
 {
-	fk< GameplayLogicPackage >[] packages = 
+	fk< GameplayLogicPackage >[] packages =
 	[
 		{
-			fk< Effector >[] effectors = 
+			fk< Effector >[] effectors =
 			[
 				{
-					prereqRecord = 
+					prereqRecord =
 					{
 						statType = "Health";
 						valueToCheck = 0;
 						comparisonType = "Greater";
 					} : StatPrereq;
 					effectorClassName = "ModifyStatPoolValueEffector";
-					statPoolUpdates = 
+					statPoolUpdates =
 					[
 						{
 							statPoolType = "BaseStatPools.Health";
@@ -365,10 +365,10 @@ FirstAidWhiffV2 : FirstAidWhiffV0
 BlackLaceV0 : InhalerBuff
 {
 	fk< StatModifierGroup > duration = "Items.BlackLaceDuration";
-	fk< GameplayLogicPackage >[] packages = 
+	fk< GameplayLogicPackage >[] packages =
 	[
 		{
-			fk< StatModifier >[] stats = 
+			fk< StatModifier >[] stats =
 			[
 				{
 					statType = "BaseStats.Armor";
@@ -378,11 +378,11 @@ BlackLaceV0 : InhalerBuff
 			];
 		} : GameplayLogicPackage
 	];
-	uiData = 
+	uiData =
 	{
 		string displayName = "LocKey#49554";
 		description = "LocKey#77751";
-		intValues = 
+		intValues =
 		[
 			10
 		];
@@ -393,20 +393,20 @@ BlackLaceV0 : InhalerBuff
 BonesMcCoy70V0 : InjectorBuff
 {
 	fk< StatModifierGroup > duration = "Items.BonesMcCoy70Duration";
-	fk< GameplayLogicPackage >[] packages = 
+	fk< GameplayLogicPackage >[] packages =
 	[
 		{
-			fk< Effector >[] effectors = 
+			fk< Effector >[] effectors =
 			[
 				{
-					prereqRecord = 
+					prereqRecord =
 					{
 						statType = "Health";
 						valueToCheck = 0;
 						comparisonType = "Greater";
 					} : StatPrereq;
 					effectorClassName = "ModifyStatPoolModifierEffector";
-					fk< PoolValueModifier > poolModifier = 
+					fk< PoolValueModifier > poolModifier =
 					{
 						bool enabled = true;
 						float rangeBegin = 0;
@@ -417,16 +417,16 @@ BonesMcCoy70V0 : InjectorBuff
 					} : PoolValueModifier;
 					string statPoolType = "Health";
 					string modificationType = "Regeneration";
-				} : ModifyStatPoolModifierEffector, 
+				} : ModifyStatPoolModifierEffector,
 				{
-					prereqRecord = 
+					prereqRecord =
 					{
 						statType = "Health";
 						valueToCheck = 0;
 						comparisonType = "Greater";
 					} : StatPrereq;
 					effectorClassName = "ModifyStatPoolValueEffector";
-					statPoolUpdates = 
+					statPoolUpdates =
 					[
 						{
 							statPoolType = "BaseStatPools.Health";
@@ -438,11 +438,11 @@ BonesMcCoy70V0 : InjectorBuff
 			];
 		} : GameplayLogicPackage
 	];
-	uiData = 
+	uiData =
 	{
 		string displayName = "LocKey#34157";
 		description = "LocKey#77749";
-		intValues = 
+		intValues =
 		[
 			3
 		];
@@ -452,20 +452,20 @@ BonesMcCoy70V0 : InjectorBuff
 
 BonesMcCoy70V1 : BonesMcCoy70V0
 {
-	fk< GameplayLogicPackage >[] packages = 
+	fk< GameplayLogicPackage >[] packages =
 	[
 		{
-			fk< Effector >[] effectors = 
+			fk< Effector >[] effectors =
 			[
 				{
-					prereqRecord = 
+					prereqRecord =
 					{
 						statType = "Health";
 						valueToCheck = 0;
 						comparisonType = "Greater";
 					} : StatPrereq;
 					effectorClassName = "ModifyStatPoolModifierEffector";
-					fk< PoolValueModifier > poolModifier = 
+					fk< PoolValueModifier > poolModifier =
 					{
 						bool enabled = true;
 						float rangeBegin = 0;
@@ -476,16 +476,16 @@ BonesMcCoy70V1 : BonesMcCoy70V0
 					} : PoolValueModifier;
 					string statPoolType = "Health";
 					string modificationType = "Regeneration";
-				} : ModifyStatPoolModifierEffector, 
+				} : ModifyStatPoolModifierEffector,
 				{
-					prereqRecord = 
+					prereqRecord =
 					{
 						statType = "Health";
 						valueToCheck = 0;
 						comparisonType = "Greater";
 					} : StatPrereq;
 					effectorClassName = "ModifyStatPoolValueEffector";
-					statPoolUpdates = 
+					statPoolUpdates =
 					[
 						{
 							statPoolType = "BaseStatPools.Health";
@@ -497,11 +497,11 @@ BonesMcCoy70V1 : BonesMcCoy70V0
 			];
 		} : GameplayLogicPackage
 	];
-	uiData = 
+	uiData =
 	{
 		string displayName = "LocKey#34157";
 		description = "LocKey#77749";
-		intValues = 
+		intValues =
 		[
 			4
 		];
@@ -511,20 +511,20 @@ BonesMcCoy70V1 : BonesMcCoy70V0
 
 BonesMcCoy70V2 : BonesMcCoy70V0
 {
-	fk< GameplayLogicPackage >[] packages = 
+	fk< GameplayLogicPackage >[] packages =
 	[
 		{
-			fk< Effector >[] effectors = 
+			fk< Effector >[] effectors =
 			[
 				{
-					prereqRecord = 
+					prereqRecord =
 					{
 						statType = "Health";
 						valueToCheck = 0;
 						comparisonType = "Greater";
 					} : StatPrereq;
 					effectorClassName = "ModifyStatPoolModifierEffector";
-					fk< PoolValueModifier > poolModifier = 
+					fk< PoolValueModifier > poolModifier =
 					{
 						bool enabled = true;
 						float rangeBegin = 0;
@@ -535,16 +535,16 @@ BonesMcCoy70V2 : BonesMcCoy70V0
 					} : PoolValueModifier;
 					string statPoolType = "Health";
 					string modificationType = "Regeneration";
-				} : ModifyStatPoolModifierEffector, 
+				} : ModifyStatPoolModifierEffector,
 				{
-					prereqRecord = 
+					prereqRecord =
 					{
 						statType = "Health";
 						valueToCheck = 0;
 						comparisonType = "Greater";
 					} : StatPrereq;
 					effectorClassName = "ModifyStatPoolValueEffector";
-					statPoolUpdates = 
+					statPoolUpdates =
 					[
 						{
 							statPoolType = "BaseStatPools.Health";
@@ -556,11 +556,11 @@ BonesMcCoy70V2 : BonesMcCoy70V0
 			];
 		} : GameplayLogicPackage
 	];
-	uiData = 
+	uiData =
 	{
 		string displayName = "LocKey#34157";
 		description = "LocKey#77749";
-		intValues = 
+		intValues =
 		[
 			6
 		];
@@ -570,22 +570,22 @@ BonesMcCoy70V2 : BonesMcCoy70V0
 
 WellFed : ConsumableBuff
 {
-	fk< StatModifierGroup > duration = "Items.WellFedDuration";
-	packages = 
+	duration = "Items.LongLastingConsumableDuration";
+	packages =
 	[
 		{
-			stats = 
+			stats =
 			[
 				{
 					statType = "BaseStats.Health";
 					modifierType = "AdditiveMultiplier";
 					value = 0.05f;
-				} : ConstantStatModifier, 
+				} : ConstantStatModifier,
 				{
 					statType = "BaseStats.HealthOutOfCombatRegenRate";
 					modifierType = "Additive";
 					value = 0.5f;
-				} : ConstantStatModifier, 
+				} : ConstantStatModifier,
 				{
 					statType = "BaseStats.HealthOutOfCombatRegenEndThreshold";
 					modifierType = "Additive";
@@ -594,15 +594,15 @@ WellFed : ConsumableBuff
 			];
 		} : GameplayLogicPackage
 	];
-	uiData = 
+	uiData =
 	{
 		string displayName = "LocKey#40991";
 		description = "LocKey#77748";
-		intValues = 
+		intValues =
 		[
 			5
 		];
-		floatValues = 
+		floatValues =
 		[
 			0.5f
 		];
@@ -610,19 +610,103 @@ WellFed : ConsumableBuff
 	};
 }
 
-Sated : ConsumableBuff
+WellFedPlus : ConsumableBuff
 {
-	fk< StatModifierGroup > duration = "Items.SatedDuration";
-	packages = 
+	duration = "Items.LongLastingConsumableDuration";
+	packages =
 	[
 		{
-			stats = 
+			stats =
+			[
+				{
+					statType = "BaseStats.Health";
+					modifierType = "AdditiveMultiplier";
+					value = 0.1f;
+				} : ConstantStatModifier,
+				{
+					statType = "BaseStats.HealthOutOfCombatRegenRate";
+					modifierType = "Additive";
+					value = 1.0f;
+				} : ConstantStatModifier,
+				{
+					statType = "BaseStats.HealthOutOfCombatRegenEndThreshold";
+					modifierType = "Additive";
+					value = 40f;
+				} : ConstantStatModifier
+			];
+		} : GameplayLogicPackage
+	];
+	uiData =
+	{
+		string displayName = "LocKey#40991";
+		description = "LocKey#77748";
+		intValues =
+		[
+			10
+		];
+		floatValues =
+		[
+			1.0f
+		];
+		string iconPath = "health_booster_regen";
+	};
+}
+
+WellFedMax : ConsumableBuff
+{
+	duration = "Items.LongLastingConsumableDuration";
+	packages =
+	[
+		{
+			stats =
+			[
+				{
+					statType = "BaseStats.Health";
+					modifierType = "AdditiveMultiplier";
+					value = 0.15f;
+				} : ConstantStatModifier,
+				{
+					statType = "BaseStats.HealthOutOfCombatRegenRate";
+					modifierType = "Additive";
+					value = 1.5f;
+				} : ConstantStatModifier,
+				{
+					statType = "BaseStats.HealthOutOfCombatRegenEndThreshold";
+					modifierType = "Additive";
+					value = 40f;
+				} : ConstantStatModifier
+			];
+		} : GameplayLogicPackage
+	];
+	uiData =
+	{
+		string displayName = "LocKey#40991";
+		description = "LocKey#77748";
+		intValues =
+		[
+			15
+		];
+		floatValues =
+		[
+			1.5f
+		];
+		string iconPath = "health_booster_regen";
+	};
+}
+
+Sated : ConsumableBuff
+{
+	duration = "Items.LongLastingConsumableDuration";
+	packages =
+	[
+		{
+			stats =
 			[
 				{
 					statType = "BaseStats.Stamina";
 					modifierType = "AdditiveMultiplier";
 					value = 0.1f;
-				} : ConstantStatModifier, 
+				} : ConstantStatModifier,
 				{
 					statType = "BaseStats.StaminaRegenRateMult";
 					modifierType = "Additive";
@@ -631,13 +715,79 @@ Sated : ConsumableBuff
 			];
 		} : GameplayLogicPackage
 	];
-	uiData = 
+	uiData =
 	{
 		string displayName = "LocKey#40990";
 		description = "LocKey#77747";
-		intValues = 
+		intValues =
 		[
 			10, 50
+		];
+		string iconPath = "hydrated_icon";
+	};
+}
+
+SatedPlus : ConsumableBuff
+{
+	duration = "Items.LongLastingConsumableDuration";
+	packages =
+	[
+		{
+			stats =
+			[
+				{
+					statType = "BaseStats.Stamina";
+					modifierType = "AdditiveMultiplier";
+					value = 0.2f;
+				} : ConstantStatModifier,
+				{
+					statType = "BaseStats.StaminaRegenRateMult";
+					modifierType = "Additive";
+					value = 0.6f;
+				} : ConstantStatModifier
+			];
+		} : GameplayLogicPackage
+	];
+	uiData =
+	{
+		string displayName = "LocKey#40990";
+		description = "LocKey#77747";
+		intValues =
+		[
+			20, 60
+		];
+		string iconPath = "hydrated_icon";
+	};
+}
+
+SatedMax : ConsumableBuff
+{
+	duration = "Items.LongLastingConsumableDuration";
+	packages =
+	[
+		{
+			stats =
+			[
+				{
+					statType = "BaseStats.Stamina";
+					modifierType = "AdditiveMultiplier";
+					value = 0.3f;
+				} : ConstantStatModifier,
+				{
+					statType = "BaseStats.StaminaRegenRateMult";
+					modifierType = "Additive";
+					value = 0.7f;
+				} : ConstantStatModifier
+			];
+		} : GameplayLogicPackage
+	];
+	uiData =
+	{
+		string displayName = "LocKey#40990";
+		description = "LocKey#77747";
+		intValues =
+		[
+			30, 70
 		];
 		string iconPath = "hydrated_icon";
 	};
@@ -646,9 +796,9 @@ Sated : ConsumableBuff
 AlcoholDebuff : ConsumableBuff
 {
 	duration = "Items.AlcoholConsumableDuration";
-	maxStacks = 
+	maxStacks =
 	{
-		statModifiers = 
+		statModifiers =
 		[
 			{
 				statType = "BaseStats.MaxStacks";
@@ -657,15 +807,15 @@ AlcoholDebuff : ConsumableBuff
 			} : ConstantStatModifier
 		];
 	};
-	gameplayTags = 
+	gameplayTags =
 	[
 		"Debuff"
 	];
-	packages = 
+	packages =
 	[
 		{
 			stackable = true;
-			stats = 
+			stats =
 			[
 				{
 					statType = "BaseStats.MaxSpeed";
@@ -673,23 +823,23 @@ AlcoholDebuff : ConsumableBuff
 					value = 0.9f;
 				} : ConstantStatModifier
 			];
-		}, 
+		},
 		{
 			stackable = true;
-			fk< Effector >[] effectors = 
+			fk< Effector >[] effectors =
 			[
 				{
 					prereqRecord = "Prereqs.RangedWeaponHeldPrereq";
 					CName effectorClassName = "ApplyStatGroupEffector";
-					fk< StatModifierGroup > statGroup = 
+					fk< StatModifierGroup > statGroup =
 					{
-						statModifiers = 
+						statModifiers =
 						[
 							{
 								statType = "BaseStats.SpreadChangePerShot";
 								modifierType = "AdditiveMultiplier";
 								value = -0.5f;
-							} : ConstantStatModifier, 
+							} : ConstantStatModifier,
 							{
 								statType = "BaseStats.SpreadAdsChangePerShot";
 								modifierType = "AdditiveMultiplier";
@@ -707,10 +857,10 @@ AlcoholDebuff : ConsumableBuff
 HealthBooster : ConsumableBuff
 {
 	duration = "Items.LongLastingConsumableDuration";
-	packages = 
+	packages =
 	[
 		{
-			fk< StatModifier >[] stats = 
+			fk< StatModifier >[] stats =
 			[
 				{
 					statType = "BaseStats.Health";
@@ -720,11 +870,11 @@ HealthBooster : ConsumableBuff
 			];
 		} : GameplayLogicPackage
 	];
-	uiData = 
+	uiData =
 	{
 		string displayName = "LocKey#43539";
 		string description = "LocKey#77746";
-		intValues = 
+		intValues =
 		[
 			20
 		];
@@ -735,10 +885,10 @@ HealthBooster : ConsumableBuff
 StaminaBooster : ConsumableBuff
 {
 	duration = "Items.LongLastingConsumableDuration";
-	packages = 
+	packages =
 	[
 		{
-			fk< StatModifier >[] stats = 
+			fk< StatModifier >[] stats =
 			[
 				{
 					statType = "BaseStats.Stamina";
@@ -748,11 +898,11 @@ StaminaBooster : ConsumableBuff
 			];
 		} : GameplayLogicPackage
 	];
-	uiData = 
+	uiData =
 	{
 		string displayName = "LocKey#43542";
 		description = "LocKey#77743";
-		intValues = 
+		intValues =
 		[
 			50
 		];
@@ -763,10 +913,10 @@ StaminaBooster : ConsumableBuff
 MemoryBooster : ConsumableBuff
 {
 	duration = "Items.LongLastingConsumableDuration";
-	packages = 
+	packages =
 	[
 		{
-			fk< StatModifier >[] stats = 
+			fk< StatModifier >[] stats =
 			[
 				{
 					statType = "BaseStats.Memory";
@@ -776,11 +926,11 @@ MemoryBooster : ConsumableBuff
 			];
 		} : GameplayLogicPackage
 	];
-	uiData = 
+	uiData =
 	{
 		string displayName = "LocKey#43545";
 		description = "LocKey#77745";
-		intValues = 
+		intValues =
 		[
 			2
 		];
@@ -791,10 +941,10 @@ MemoryBooster : ConsumableBuff
 CarryCapacityBooster : ConsumableBuff
 {
 	duration = "Items.LongLastingConsumableDuration";
-	fk< GameplayLogicPackage >[] packages = 
+	fk< GameplayLogicPackage >[] packages =
 	[
 		{
-			stats = 
+			stats =
 			[
 				{
 					statType = "BaseStats.CarryCapacity";
@@ -804,11 +954,11 @@ CarryCapacityBooster : ConsumableBuff
 			];
 		}
 	];
-	uiData = 
+	uiData =
 	{
 		string displayName = "LocKey#43548";
 		description = "LocKey#77744";
-		intValues = 
+		intValues =
 		[
 			50
 		];
@@ -819,10 +969,10 @@ CarryCapacityBooster : ConsumableBuff
 OxyBooster : ConsumableBuff
 {
 	fk< StatModifierGroup > duration = "Items.LongLastingConsumableDuration";
-	fk< GameplayLogicPackage >[] packages = 
+	fk< GameplayLogicPackage >[] packages =
 	[
 		{
-			fk< StatModifier >[] stats = 
+			fk< StatModifier >[] stats =
 			[
 				{
 					statType = "BaseStats.CanBreatheUnderwater";
@@ -832,7 +982,7 @@ OxyBooster : ConsumableBuff
 			];
 		} : GameplayLogicPackage
 	];
-	uiData = 
+	uiData =
 	{
 		string displayName = "LocKey#43551";
 		description = "LocKey#77742";

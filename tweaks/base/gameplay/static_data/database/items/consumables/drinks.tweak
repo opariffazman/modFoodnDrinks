@@ -24,14 +24,6 @@ Drink : ConsumableItem
 	];
 	objectActions =
 	[
-		{
-			completionEffects =
-			[
-				{
-					statusEffect = "BaseStatusEffect.Sated";
-				}
-			];
-		} : ItemAction.Drink,
 		"ItemAction.Drop"
 	];
 	itemSecondaryAction = "ItemAction.Drink";
@@ -53,6 +45,36 @@ Drink : ConsumableItem
 			opSymbol = "*";
 		} : CombinedStatModifier
 	];
+	statModifierGroups =
+	[
+		"Items.LongLastingConsumableDuration"
+	];
+}
+
+[ notQueryable ]
+LowQualityDrink : Items.Drink
+{
+	fk< Quality > quality = "Quality.Uncommon";
+	appearanceName = "base_drink_item_default";
+	buyPrice +=
+	[
+		"Price.LowQualityDrink"
+	];
+	sellPrice +=
+	[
+		"Price.LowQualityDrink"
+	];
+	objectActions +=
+	[
+		{
+			completionEffects =
+			[
+				{
+					statusEffect = "BaseStatusEffect.Sated";
+				}
+			];
+		} : ItemAction.Drink
+	];
 	OnEquip =
 	[
 		{
@@ -66,31 +88,12 @@ Drink : ConsumableItem
 			};
 		}
 	];
-	statModifierGroups =
-	[
-		"Items.WellFedDuration"
-	];
-}
-
-[ notQueryable ]
-LowQualityDrink : Items.Drink
-{
-	fk< Quality > quality = "Quality.Common";
-	appearanceName = "base_drink_item_default";
-	buyPrice +=
-	[
-		"Price.LowQualityDrink"
-	];
-	sellPrice +=
-	[
-		"Price.LowQualityDrink"
-	];
 }
 
 [ notQueryable ]
 MediumQualityDrink : Items.Drink
 {
-	fk< Quality > quality = "Quality.Common";
+	fk< Quality > quality = "Quality.Rare";
 	appearanceName = "base_drink_item_j_beer";
 	buyPrice +=
 	[
@@ -100,12 +103,36 @@ MediumQualityDrink : Items.Drink
 	[
 		"Price.MediumQualityDrink"
 	];
+	objectActions +=
+	[
+		{
+			completionEffects =
+			[
+				{
+					statusEffect = "BaseStatusEffect.Sated";
+				}
+			];
+		} : ItemAction.Drink
+	];
+	OnEquip =
+	[
+		{
+			UIData =
+			{
+				localizedDescription = "LocKey#34125";
+				intValues =
+				[
+					20, 60
+				];
+			};
+		}
+	];
 }
 
 [ notQueryable ]
 GoodQualityDrink : Items.Drink
 {
-	fk< Quality > quality = "Quality.Common";
+	fk< Quality > quality = "Quality.Epic";
 	appearanceName = "base_drink_item_whiskey_bottle";
 	buyPrice +=
 	[
@@ -114,6 +141,30 @@ GoodQualityDrink : Items.Drink
 	sellPrice +=
 	[
 		"Price.GoodQualityDrink"
+	];
+	objectActions +=
+	[
+		{
+			completionEffects =
+			[
+				{
+					statusEffect = "BaseStatusEffect.Sated";
+				}
+			];
+		} : ItemAction.Drink
+	];
+	OnEquip =
+	[
+		{
+			UIData =
+			{
+				localizedDescription = "LocKey#34125";
+				intValues =
+				[
+					30, 70
+				];
+			};
+		}
 	];
 }
 

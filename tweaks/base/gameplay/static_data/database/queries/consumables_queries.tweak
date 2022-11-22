@@ -4,7 +4,7 @@ using RTDB
 ConsumableQuery : ItemQuery
 {
 	recordType = "RTDB.ConsumableItem";
-	tags = 
+	tags =
 	[
 		"HasModel"
 	];
@@ -13,7 +13,7 @@ ConsumableQuery : ItemQuery
 SmallFoodQuery : ItemQuery
 {
 	recordType = "Items.Food";
-	tags = 
+	tags =
 	[
 		"HasModel", "Small"
 	];
@@ -22,7 +22,7 @@ SmallFoodQuery : ItemQuery
 MediumFoodQuery : ItemQuery
 {
 	recordType = "Items.Food";
-	tags = 
+	tags =
 	[
 		"HasModel", "Medium"
 	];
@@ -31,7 +31,7 @@ MediumFoodQuery : ItemQuery
 LargeFoodQuery : ItemQuery
 {
 	recordType = "Items.Food";
-	tags = 
+	tags =
 	[
 		"HasModel", "Large"
 	];
@@ -40,7 +40,7 @@ LargeFoodQuery : ItemQuery
 FoodQuery : ItemQuery
 {
 	recordType = "Items.Food";
-	tags = 
+	tags =
 	[
 		"HasModel"
 	];
@@ -49,22 +49,34 @@ FoodQuery : ItemQuery
 LowQualityFood : FoodQuery
 {
 	recordType = "Items.LowQualityFood";
+	tags +=
+	[
+		"OnlyBaseQuality"
+	];
 }
 
 MediumQualityFood : FoodQuery
 {
 	recordType = "Items.MediumQualityFood";
+	tags +=
+	[
+		"OnlyBaseQuality"
+	];
 }
 
 GoodQualityFood : FoodQuery
 {
 	recordType = "Items.GoodQualityFood";
+	tags +=
+	[
+		"OnlyBaseQuality"
+	];
 }
 
 DrinkQuery : ItemQuery
 {
 	recordType = "Items.Drink";
-	tags = 
+	tags =
 	[
 		"HasModel"
 	];
@@ -73,21 +85,37 @@ DrinkQuery : ItemQuery
 LowQualityDrink : DrinkQuery
 {
 	recordType = "Items.LowQualityDrink";
+	tags +=
+	[
+		"OnlyBaseQuality"
+	];
 }
 
 MediumQualityDrink : DrinkQuery
 {
 	recordType = "Items.MediumQualityDrink";
+	tags +=
+	[
+		"OnlyBaseQuality"
+	];
 }
 
 GoodQualityDrink : DrinkQuery
 {
 	recordType = "Items.GoodQualityDrink";
+	tags +=
+	[
+		"OnlyBaseQuality"
+	];
 }
 
 AlcoholQuery : ItemQuery
 {
 	recordType = "Items.Alcohol";
+	tags =
+	[
+		"OnlyBaseQuality"
+	];
 }
 
 LowQualityAlcohol : AlcoholQuery
@@ -113,7 +141,7 @@ TopQualityAlcohol : AlcoholQuery
 InhalerQuery : ItemQuery
 {
 	recordType = "Items.Inhaler";
-	tags = 
+	tags =
 	[
 		"OnlyBaseQuality"
 	];
@@ -122,7 +150,7 @@ InhalerQuery : ItemQuery
 InjectorQuery : ItemQuery
 {
 	recordType = "Items.Injector";
-	tags = 
+	tags =
 	[
 		"OnlyBaseQuality"
 	];
@@ -131,7 +159,7 @@ InjectorQuery : ItemQuery
 LongLastingQuery : ItemQuery
 {
 	recordType = "Items.LongLasting";
-	tags = 
+	tags =
 	[
 		"OnlyBaseQuality"
 	];
@@ -140,7 +168,7 @@ LongLastingQuery : ItemQuery
 FactionConsumable : ItemQuery
 {
 	recordType = "Items.FactionConsumable";
-	tags += 
+	tags +=
 	[
 		"FactionItem"
 	];
@@ -148,7 +176,7 @@ FactionConsumable : ItemQuery
 
 AnimalsConsumables : Query.FactionConsumable
 {
-	tags += 
+	tags +=
 	[
 		"Animals"
 	];
@@ -156,7 +184,7 @@ AnimalsConsumables : Query.FactionConsumable
 
 MaelstromConsumables : Query.FactionConsumable
 {
-	tags += 
+	tags +=
 	[
 		"Maelstrom"
 	];
@@ -164,7 +192,7 @@ MaelstromConsumables : Query.FactionConsumable
 
 VoodooBoysConsumables : Query.FactionConsumable
 {
-	tags += 
+	tags +=
 	[
 		"VoodooBoys"
 	];
