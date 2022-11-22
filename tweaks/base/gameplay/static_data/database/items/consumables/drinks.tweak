@@ -109,7 +109,7 @@ MediumQualityDrink : Items.Drink
 			completionEffects =
 			[
 				{
-					statusEffect = "BaseStatusEffect.Sated";
+					statusEffect = "BaseStatusEffect.SatedPlus";
 				}
 			];
 		} : ItemAction.Drink
@@ -148,7 +148,7 @@ GoodQualityDrink : Items.Drink
 			completionEffects =
 			[
 				{
-					statusEffect = "BaseStatusEffect.Sated";
+					statusEffect = "BaseStatusEffect.SatedMax";
 				}
 			];
 		} : ItemAction.Drink
