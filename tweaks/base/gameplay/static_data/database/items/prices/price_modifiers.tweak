@@ -871,22 +871,22 @@ Alcohol : PriceAdditive
 
 LowQualityAlcohol : PriceMultiplier
 {
-	value = 1.0f;
+	value = 2.0f;
 }
 
 MediumQualityAlcohol : PriceMultiplier
 {
-	value = 2.0f;
+	value = 4.0f;
 }
 
 GoodQualityAlcohol : PriceMultiplier
 {
-	value = 3.0f;
+	value = 8.0f;
 }
 
 TopQualityAlcohol : PriceMultiplier
 {
-	value = 5.0f;
+	value = 10.0f;
 }
 
 Drug : PriceMultiplier

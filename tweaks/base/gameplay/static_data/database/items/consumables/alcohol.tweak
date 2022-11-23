@@ -12,35 +12,6 @@ Alcohol : ConsumableItem
 	];
 	itemType = "ItemType.Con_Edible";
 	consumableBaseName = "ConsumableBaseName.Alcohol";
-	objectActions =
-	[
-		{
-			completionEffects =
-			[
-				{
-					statusEffect = "BaseStatusEffect.Drunk";
-				},
-				{
-					statusEffect = "BaseStatusEffect.AlcoholDebuff";
-				}
-			];
-		} : Consume
-	];
-	OnEquip =
-	[
-		{
-			UIData =
-			{
-				localizedDescription = "LocKey#34248";
-			};
-		},
-		{
-			UIData =
-			{
-				localizedDescription = "LocKey#34249";
-			};
-		}
-	];
 	statModifierGroups =
 	[
 		"Items.AlcoholConsumableDuration"
@@ -58,7 +29,7 @@ Alcohol : ConsumableItem
 [ notQueryable ]
 LowQualityAlcohol : Alcohol
 {
-	fk< Quality > quality = "Quality.Common";
+	fk< Quality > quality = "Quality.Uncommon";
 	buyPrice +=
 	[
 		"Price.LowQualityAlcohol"
@@ -66,13 +37,55 @@ LowQualityAlcohol : Alcohol
 	sellPrice +=
 	[
 		"Price.LowQualityAlcohol"
+	];
+	objectActions =
+	[
+		{
+			completionEffects =
+			[
+				{
+					statusEffect = "BaseStatusEffect.Drunk";
+				},
+				{
+					statusEffect = "BaseStatusEffect.AlcoholDebuff";
+				},
+				{
+					statusEffect = "BaseStatusEffect.AlcoholBuffUncommon";
+				}
+			];
+		} : Consume
+	];
+	OnEquip =
+	[
+		{
+			UIData =
+			{
+				localizedDescription = "LocKey#34248";
+			};
+		},
+		{
+			UIData =
+			{
+				localizedDescription = "LocKey#34249";
+			};
+		},
+		{
+			UIData =
+			{
+				localizedDescription = "LocKey#79835"
+				intValues =
+				[
+					1, 0
+				];
+			}
+		}
 	];
 }
 
 [ notQueryable ]
 MediumQualityAlcohol : Alcohol
 {
-	fk< Quality > quality = "Quality.Uncommon";
+	fk< Quality > quality = "Quality.Rare";
 	buyPrice +=
 	[
 		"Price.MediumQualityAlcohol"
@@ -80,13 +93,55 @@ MediumQualityAlcohol : Alcohol
 	sellPrice +=
 	[
 		"Price.MediumQualityAlcohol"
+	];
+	objectActions =
+	[
+		{
+			completionEffects =
+			[
+				{
+					statusEffect = "BaseStatusEffect.Drunk";
+				},
+				{
+					statusEffect = "BaseStatusEffect.AlcoholDebuff";
+				},
+				{
+					statusEffect = "BaseStatusEffect.AlcoholBuffRare";
+				}
+			];
+		} : Consume
+	];
+	OnEquip =
+	[
+		{
+			UIData =
+			{
+				localizedDescription = "LocKey#34248";
+			};
+		},
+		{
+			UIData =
+			{
+				localizedDescription = "LocKey#34249";
+			};
+		},
+		{
+			UIData =
+			{
+				localizedDescription = "LocKey#79835"
+				intValues =
+				[
+					2, 0
+				];
+			}
+		}
 	];
 }
 
 [ notQueryable ]
 GoodQualityAlcohol : Alcohol
 {
-	fk< Quality > quality = "Quality.Rare";
+	fk< Quality > quality = "Quality.Epic";
 	buyPrice +=
 	[
 		"Price.GoodQualityAlcohol"
@@ -94,13 +149,55 @@ GoodQualityAlcohol : Alcohol
 	sellPrice +=
 	[
 		"Price.GoodQualityAlcohol"
+	];
+	objectActions =
+	[
+		{
+			completionEffects =
+			[
+				{
+					statusEffect = "BaseStatusEffect.Drunk";
+				},
+				{
+					statusEffect = "BaseStatusEffect.AlcoholDebuff";
+				},
+				{
+					statusEffect = "BaseStatusEffect.AlcoholBuffEpic";
+				}
+			];
+		} : Consume
+	];
+	OnEquip =
+	[
+		{
+			UIData =
+			{
+				localizedDescription = "LocKey#34248";
+			};
+		},
+		{
+			UIData =
+			{
+				localizedDescription = "LocKey#34249";
+			};
+		},
+		{
+			UIData =
+			{
+				localizedDescription = "LocKey#79835"
+				intValues =
+				[
+					1, 2
+				];
+			}
+		}
 	];
 }
 
 [ notQueryable ]
 TopQualityAlcohol : Alcohol
 {
-	fk< Quality > quality = "Quality.Epic";
+	fk< Quality > quality = "Quality.Legendary";
 	buyPrice +=
 	[
 		"Price.TopQualityAlcohol"
@@ -108,6 +205,48 @@ TopQualityAlcohol : Alcohol
 	sellPrice +=
 	[
 		"Price.TopQualityAlcohol"
+	];
+	objectActions =
+	[
+		{
+			completionEffects =
+			[
+				{
+					statusEffect = "BaseStatusEffect.Drunk";
+				},
+				{
+					statusEffect = "BaseStatusEffect.AlcoholDebuff";
+				},
+				{
+					statusEffect = "BaseStatusEffect.AlcoholBuffLegendary";
+				}
+			];
+		} : Consume
+	];
+	OnEquip =
+	[
+		{
+			UIData =
+			{
+				localizedDescription = "LocKey#34248";
+			};
+		},
+		{
+			UIData =
+			{
+				localizedDescription = "LocKey#34249";
+			};
+		},
+		{
+			UIData =
+			{
+				localizedDescription = "LocKey#79835"
+				intValues =
+				[
+					2, 4
+				];
+			}
+		}
 	];
 }
 

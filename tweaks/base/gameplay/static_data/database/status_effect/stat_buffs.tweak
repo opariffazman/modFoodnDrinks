@@ -793,6 +793,136 @@ SatedMax : ConsumableBuff
 	};
 }
 
+AlcoholBuffUncommon : ConsumableBuff
+{
+	duration = "Items.AlcoholConsumableDuration";
+	maxStacks =
+	{
+		statModifiers =
+		[
+			{
+				statType = "BaseStats.MaxStacks";
+				modifierType = "Additive";
+				value = 4;
+			} : ConstantStatModifier
+		];
+	};
+	packages =
+	[
+		{
+			stackable = true;
+			stats =
+			[
+				{
+					statType = "BaseStats.MitigationChance";
+					modifierType = "Additive";
+					value = 1f;
+				} : ConstantStatModifier
+			];
+		} : GameplayLogicPackage
+	];
+}
+
+AlcoholBuffRare : ConsumableBuff
+{
+	duration = "Items.AlcoholConsumableDuration";
+	maxStacks =
+	{
+		statModifiers =
+		[
+			{
+				statType = "BaseStats.MaxStacks";
+				modifierType = "Additive";
+				value = 4;
+			} : ConstantStatModifier
+		];
+	};
+	packages =
+	[
+		{
+			stackable = true;
+			stats =
+			[
+				{
+					statType = "BaseStats.MitigationChance";
+					modifierType = "Additive";
+					value = 2f;
+				} : ConstantStatModifier
+			]
+		} : GameplayLogicPackage
+	];
+}
+
+AlcoholBuffEpic : ConsumableBuff
+{
+	duration = "Items.AlcoholConsumableDuration";
+	maxStacks =
+	{
+		statModifiers =
+		[
+			{
+				statType = "BaseStats.MaxStacks";
+				modifierType = "Additive";
+				value = 4;
+			} : ConstantStatModifier
+		];
+	};
+	packages =
+	[
+		{
+			stackable = true;
+			stats =
+			[
+				{
+					statType = "BaseStats.MitigationChance";
+					modifierType = "Additive";
+					value = 1f;
+				} : ConstantStatModifier,
+				{
+					statType = "BaseStats.MitigationStrength";
+					modifierType = "Additive";
+					value = 2f;
+				} : ConstantStatModifier
+			];
+		} : GameplayLogicPackage
+	];
+}
+
+AlcoholBuffLegendary : ConsumableBuff
+{
+	duration = "Items.AlcoholConsumableDuration";
+	maxStacks =
+	{
+		statModifiers =
+		[
+			{
+				statType = "BaseStats.MaxStacks";
+				modifierType = "Additive";
+				value = 4;
+			} : ConstantStatModifier
+		];
+	};
+	packages =
+	[
+		{
+			stackable = true;
+			stats =
+			[
+				{
+					statType = "BaseStats.MitigationChance";
+					modifierType = "Additive";
+					value = 2f;
+				} : ConstantStatModifier,
+				{
+					statType = "BaseStats.MitigationStrength";
+					modifierType = "Additive";
+					value = 4f;
+				} : ConstantStatModifier
+			];
+		} : GameplayLogicPackage
+	];
+}
+
 AlcoholDebuff : ConsumableBuff
 {
 	duration = "Items.AlcoholConsumableDuration";
